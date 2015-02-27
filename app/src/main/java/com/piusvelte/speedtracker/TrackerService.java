@@ -425,6 +425,9 @@ public class TrackerService extends Service implements GoogleApiClient.Connectio
             parcel.setDataPosition(0);
 
             mStartLocation = Location.CREATOR.createFromParcel(parcel);
+
+            parcel.recycle();
+
             mStartTime = timestamp;
             mActivity = mPreferences.getString(PREF_ACTIVITY, getActivity(DetectedActivity.UNKNOWN));
 
